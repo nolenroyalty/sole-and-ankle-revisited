@@ -25,7 +25,7 @@ const Main = styled.main`
   }
 
   @media ${QUERIES.phoneAndDown} {
-    padding: 48px 12px;
+    padding: 48px 16px;
   }
 `;
 
