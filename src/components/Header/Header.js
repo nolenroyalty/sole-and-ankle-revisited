@@ -6,6 +6,8 @@ import Logo from "../Logo";
 import SuperHeader from "../SuperHeader";
 import MobileMenu from "../MobileMenu";
 import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
+import VisuallyHidden from "../VisuallyHidden";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -35,11 +37,18 @@ const Header = () => {
 
         <Side>
           <MobileMenuWrapper>
-            <Icon id="shopping-bag" size={24} strokeWidth={2} />
-            <Icon id="search" size={24} strokeWidth={2} />
-            <Button onClick={() => setShowMobileMenu(true)}>
+            <UnstyledButton>
+              <Icon id="shopping-bag" size={24} strokeWidth={2} />
+              <VisuallyHidden>Open cart</VisuallyHidden>
+            </UnstyledButton>
+            <UnstyledButton>
+              <Icon id="search" size={24} strokeWidth={2} />
+              <VisuallyHidden>Search</VisuallyHidden>
+            </UnstyledButton>
+            <UnstyledButton onClick={() => setShowMobileMenu(true)}>
               <Icon id="menu" size={24} strokeWidth={2} />
-            </Button>
+              <VisuallyHidden>Open menu</VisuallyHidden>
+            </UnstyledButton>
           </MobileMenuWrapper>
         </Side>
       </MainHeader>
@@ -52,20 +61,17 @@ const Header = () => {
   );
 };
 
-const Button = styled.button`
-  background: transparent;
-  border: none;
-  display: flex;
-  padding: 0;
-`;
-
 const MobileMenuWrapper = styled.div`
   display: none;
 
   @media ${QUERIES.tabletAndDown} {
-    gap: 16px;
+    gap: 32px;
     display: flex;
     align-items: center;
+  }
+
+  @media ${QUERIES.phoneAndDown} {
+    gap: 16px;
   }
 `;
 
@@ -81,14 +87,15 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
-  /* justify-content: flex-end; */
-  /* justify-content: space-between; */
 
   @media ${QUERIES.tabletAndDown} {
     border-top: 4px solid ${COLORS.gray[900]};
     justify-content: space-between;
-    padding: 18px 16px;
     align-items: center;
+  }
+
+  @media ${QUERIES.phoneAndDown} {
+    padding: 18px 16px;
   }
 `;
 
@@ -106,7 +113,7 @@ const Side = styled.div`
   flex: 1;
 
   @media ${QUERIES.tabletAndDown} {
-    flex: 0;
+    flex: revert;
   }
 `;
 
