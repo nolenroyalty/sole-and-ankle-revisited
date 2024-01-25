@@ -52,7 +52,7 @@ const SidebarWrapper = styled.div`
   flex-direction: column;
   padding: 16px 26px 32px;
   width: 300px;
-  background: ${COLORS.white};
+  background: var(--color-white);
 
   justify-content: space-between;
 `;
@@ -75,7 +75,7 @@ const FooterLinks = styled.footer`
 
 const FooterLink = styled.footer`
   text-decoration: none;
-  color: ${COLORS.gray[700]};
+  color: var(--color-gray-700);
   font-size: ${14 / 16}rem;
 `;
 
@@ -96,7 +96,7 @@ const ContentWrapper = styled(DialogContent)`
   flex-direction: column;
   padding: 16px 26px 32px;
   width: 300px;
-  background: ${COLORS.white};
+  background: var(--color-white);
 
   justify-content: space-between;
 `;

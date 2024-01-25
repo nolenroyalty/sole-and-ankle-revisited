@@ -85,10 +85,10 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
 
   @media ${QUERIES.tabletAndDown} {
-    border-top: 4px solid ${COLORS.gray[900]};
+    border-top: 4px solid var(--color-gray-700);
     justify-content: space-between;
     align-items: center;
   }
