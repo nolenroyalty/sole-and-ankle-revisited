@@ -1,3 +1,5 @@
+import styled from "styled-components/macro";
+
 export const COLORS = {
   white: "hsl(0deg 0% 100%)",
   gray: {
@@ -9,6 +11,7 @@ export const COLORS = {
   },
   primary: "hsl(340deg 65% 47%)",
   secondary: "hsl(240deg 60% 63%)",
+  transparentGray: "hsl(220deg 5% 40% / 80%)",
 };
 
 export const WEIGHTS = {
@@ -28,3 +31,17 @@ export const QUERIES = {
   tabletAndDown: `(max-width: ${BREAKPOINTS.tabletMax / 16}rem)`,
   laptopAndDown: `(max-width: ${BREAKPOINTS.laptopMax / 16}rem)`,
 };
+
+// this doesn't belong here but I don't have a new-component script
+
+export const NavLink = styled.a`
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: ${COLORS.gray[900]};
+  font-weight: ${WEIGHTS.medium};
+
+  &:first-of-type {
+    color: ${COLORS.secondary};
+  }
+`;
